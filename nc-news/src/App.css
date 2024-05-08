@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -77,6 +77,67 @@ color: rgb(92, 147, 207) ;
   display: flex;
 justify-content: flex-end;
 margin-left: auto; 
+  background-color: rgb(50, 130, 236);
+  color: white;
+}
+
+.view-article {
+  background-color: rgba(255, 255, 255, 0.319);
+}
+
+.view-article-top {
+  display: flex;
+  background-color: rgb(92, 147, 207);
+  margin-top: 0.5rem;
+  color: #213547
+}
+
+.view-article-title {
+  font-weight: bold;
+  justify-content: left;
+  padding-right: 0.5rem;
+}
+
+.view-article-time {
+  padding-right: 0.5rem;
+}
+
+.view-article-vote {
+display: flex;
+justify-content: flex-end;
+margin-left: auto; 
+}
+
+.view-article-vote-button {
+height: 2%;
+width: 2%;
+background-color: transparent;
+color: #213547;
+}
+
+.view-article-bottom {
+  display: flex;
+
+}
+
+.view-article-topic {
+  font-weight: bold;
+  padding-right: 0.5rem;
+  display: flex;
+}
+
+.view-article-author {
+  padding-right: 0.5rem;
+  display: flex;
+}
+
+.view-article-body {
+text-align: left;
+}
+
+.view-article-comments-button {
+  height: 2%;
+  margin-left: auto; 
   background-color: rgb(50, 130, 236);
   color: white;
 }

@@ -16,6 +16,9 @@ useEffect(() => {
         setAllArticles(response.data.articles)
         setLoading(false)
     })
+    .catch((error) => {
+        console.log(error)
+    })
 }, [])
 
 if (loading) return <p>Loading...</p>
