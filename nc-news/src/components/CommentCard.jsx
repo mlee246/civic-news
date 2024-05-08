@@ -38,6 +38,7 @@ function CommentCard({ article_id }) {
 
               <p className="comment-vote">Vote</p>
               <button className="comment-vote-button">ᐁ</button>
+              <p>{comment.votes}</p>
               <button className="comment-vote-button">ᐃ</button>
             </section>
           </div>

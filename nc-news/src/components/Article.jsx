@@ -40,6 +40,7 @@ function Article(){
         <p className="view-article-vote">Vote
         </p>
         <button className="view-article-vote-button">ᐁ</button>
+        <p>{article.votes}</p>
         <button className="view-article-vote-button">ᐃ</button>
 
         </section>
