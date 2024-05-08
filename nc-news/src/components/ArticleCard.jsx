@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 function ArticleCard({article}){
 
@@ -23,9 +23,7 @@ return (
         <p className="article-card-topic">{article.topic}</p>
         <p className="article-card-time">{timeStamp}</p>
         <p className="article-card-comments">{article.comment_count} comments</p>
-        
-        <button className="view-article-button">Go to article...</button>
-        
+        <Link className="view-article-button" to={`/articles/${article.article_id}`}>Go to article...</Link>
         </section>
         
         </div>

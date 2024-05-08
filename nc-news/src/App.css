@@ -89,13 +89,14 @@ margin-left: auto;
   display: flex;
   background-color: rgb(92, 147, 207);
   margin-top: 0.5rem;
+  padding-left: 0.5rem;
   color: #213547
 }
 
 .view-article-title {
   font-weight: bold;
-  justify-content: left;
-  padding-right: 0.5rem;
+  text-align: left;
+  margin: 0.5rem;
 }
 
 .view-article-time {
@@ -133,11 +134,37 @@ color: #213547;
 
 .view-article-body {
 text-align: left;
+margin: 0.5rem;
 }
 
-.view-article-comments-button {
+.comment-card{
+  background-color: rgba(255, 255, 255, 0.493);
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.comment-details{
+  display: flex;
+  color: rgb(92, 147, 207) ;
+}
+
+.comment-author {
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+
+.comment-vote{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+ ;
+}
+
+.comment-vote-button {
   height: 2%;
-  margin-left: auto; 
-  background-color: rgb(50, 130, 236);
-  color: white;
+width: 2%;
+background-color: transparent;
+color: rgb(92, 147, 207) ;
 }
