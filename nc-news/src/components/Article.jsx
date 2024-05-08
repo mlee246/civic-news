@@ -1,18 +1,18 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+import CommentCard from './CommentCard'
 
 function Article(){
     const [loading, setLoading] = useState(true)
     const [article, setArticle] = useState([])
-    
-    const article_id = 5
+    const {article_id} = useParams()
     
     useEffect(() => {
         axios
         .get(`https://be-nc-news-zmuo.onrender.com/api/articles/${article_id}`
         )
         .then((response) => {
-            console.log(response.data)
             setArticle(response.data.article)
             setLoading(false)
         })
@@ -24,6 +24,11 @@ function Article(){
     if (loading) return <p>Loading...</p>
 
     const timeStamp = article.created_at.slice(0,10) + " " + article.created_at.slice(11,16)
+
+    function handleComments(){
+        console.log(article_id)
+        return CommentCard(article_id)
+    }
 
     return (
         <div className='view-article'>
@@ -49,7 +54,11 @@ function Article(){
         </section>
 
         <p className='view-article-body'>{article.body}</p>
-        <button className="view-article-comments-button">Show {article.comment_count} comments</button>
+
+        <p className='view-article-comment-count'>This article has {article.comment_count} comments;</p>
+
+        <CommentCard article_id={article_id}/>
+      
         
         </div>
     )

@@ -19,7 +19,7 @@ useEffect(() => {
     .catch((error) => {
         console.log(error)
     })
-}, [])
+}, [allArticles])
 
 if (loading) return <p>Loading...</p>
 
