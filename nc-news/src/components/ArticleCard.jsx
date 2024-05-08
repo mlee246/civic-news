@@ -13,6 +13,7 @@ return (
         <p className="article-card-vote">Vote
         </p>
         <button className="article-card-vote-button">ᐁ</button>
+        <p>{article.votes}</p>
         <button className="article-card-vote-button">ᐃ</button>
 
         </section>

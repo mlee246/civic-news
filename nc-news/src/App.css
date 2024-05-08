@@ -59,6 +59,10 @@ background-color: transparent;
 color: rgb(92, 147, 207) ;
 }
 
+.article-card-image {
+max-width: 100%;
+}
+
 .article-card-bottom {
   display: flex;
 }
@@ -114,6 +118,10 @@ height: 2%;
 width: 2%;
 background-color: transparent;
 color: #213547;
+}
+
+.view-article-image{
+  width: 100%;
 }
 
 .view-article-bottom {
