@@ -27,24 +27,24 @@ function CommentCard({ article_id }) {
     );
   }
   return (
-    <>
-      {comments.map((comment) => {
-        return (
-          <div className="comment-card">
-            {comment.body}
-            <section className="comment-details">
-              <p className="comment-author">{comment.author}</p>
-              <p>{timeStamp(comment)}</p>
-
-              <p className="comment-vote">Vote</p>
-              <button className="comment-vote-button">ᐁ</button>
-              <p>{comment.votes}</p>
-              <button className="comment-vote-button">ᐃ</button>
-            </section>
-          </div>
-        );
-      })}
-    </>
+    <div className="comment-section">
+        {comments.map((comment) => {
+          return (
+            <div className="comment-card">
+              {comment.body}
+              <section className="comment-details">
+                <p className="comment-author">{comment.author}</p>
+                <p>{timeStamp(comment)}</p>
+                <p className="comment-vote">Vote</p>
+                <button className="comment-vote-button">ᐁ</button>
+                <p>{comment.votes}</p>
+                <button className="comment-vote-button">ᐃ</button>
+              </section>
+            </div>
+          );
+        })}
+     
+    </div>
   );
 }
 
