@@ -176,3 +176,18 @@ width: 2%;
 background-color: transparent;
 color: rgb(92, 147, 207) ;
 }
+
+.article-votes {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  background-color: rgb(92, 147, 207);
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  color: #213547;
+}
+
+
+.vote-button-error{
+  color: white;
+}
