@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
+import Votes from "./Votes";
 
 function Article() {
   const [loading, setLoading] = useState(true);
@@ -32,10 +33,7 @@ function Article() {
         <p className="view-article-topic">{article.topic}</p>
         <p className="view-article-author">{article.author}</p>
         <p className="view-article-time">{timeStamp}</p>
-        <p className="view-article-vote">Vote</p>
-        <button className="view-article-vote-button">ᐁ</button>
-        <p>{article.votes}</p>
-        <button className="view-article-vote-button">ᐃ</button>
+       <Votes className="view-article-top"articleVotes={article.votes} article_id={article.article_id}/>
       </section>
 
       <img
