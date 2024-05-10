@@ -1,24 +1,37 @@
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
-import Homepage from './components/Homepage'
-import AllArticles from './components/AllArticles'
-import Article from './components/Article'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Homepage from "./components/Homepage";
+import Article from "./components/Article";
+import Articles from "./components/Articles";
 
 function App() {
-
   return (
     <>
-    <Header />
+      <Header />
 
-    <Routes>
-      <Route path ="/" element={<Homepage />} />
-      <Route path ="/articles" element={<AllArticles />} />
-      <Route path ="/articles/:article_id" element={<Article />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:article_id" element={<Article />} />
 
+        <Route
+          path="/articles/coding"
+          element={<Articles topic="coding" />}
+        />
+
+        <Route
+          path="/articles/football"
+          element={<Articles topic="football" />}
+        />
+
+        <Route
+          path="/articles/cooking"
+          element={<Articles topic="cooking" />}
+        />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
