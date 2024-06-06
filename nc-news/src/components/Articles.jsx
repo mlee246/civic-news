@@ -38,6 +38,17 @@ function Articles({ topic }) {
           football: <p>⚽️</p>,
           undefined: <></>,
         }[topic]}
+      <nav>
+        <select name="sort-by" id="sort-by">
+        <option value="Date">Date</option>
+        <option value="Comments">Comments</option>
+        <option value="Votes">Votes</option>
+        </select>
+        <select name="order-by" id="order-by">
+          <option value="ascending">ᐃ</option>
+          <option value="descending">ᐁ</option>
+        </select>
+      </nav>
       {articles.map((article) => {
         return <ArticleCard article={article} />;
       })}
