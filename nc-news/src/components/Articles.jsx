@@ -2,19 +2,23 @@ import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import ArticleNavBar from "./ArticleNavBar";
+import Error from "./Error";
 
 function Articles({ topic }) {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
   const [sortBy, setSortBy] = useState("created_at");
   const [order, setOrder] = useState("descending");
-
-  let request = topic
-    ? `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`
-    : `https://be-nc-news-zmuo.onrender.com/api/articles`;
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
+    setError(null); 
+
+    const request = topic
+    ? `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`
+    : `https://be-nc-news-zmuo.onrender.com/api/articles`;
+
     axios
       .get(request)
       .then((response) => {
@@ -22,8 +26,8 @@ function Articles({ topic }) {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
+        setError(error.message);
       });
   }, [topic]);
 
@@ -48,6 +52,10 @@ function Articles({ topic }) {
 
   function changeOrder(event) {
     setOrder(event.target.value);
+  }
+
+  if (error) {
+    return <Error message={error} />;
   }
 
   return (
