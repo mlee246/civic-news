@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import ArticleNavBar from "./ArticleNavBar";
@@ -6,52 +6,73 @@ import ArticleNavBar from "./ArticleNavBar";
 function Articles({ topic }) {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
+  const [sortBy, setSortBy] = useState("created_at");
+  const [order, setOrder] = useState("descending");
 
-  let request = "";
-
-  if (topic === undefined) {
-    request = `https://be-nc-news-zmuo.onrender.com/api/articles`;
-  } else {
-    request = `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`;
-  }
+  let request = topic
+    ? `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`
+    : `https://be-nc-news-zmuo.onrender.com/api/articles`;
 
   useEffect(() => {
+    setLoading(true);
     axios
-      .get(`${request}`)
+      .get(request)
       .then((response) => {
         setArticles(response.data.articles);
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
   }, [topic]);
 
+  const sortedArticles = useMemo(() => {
+    return [...articles].sort((a, b) => {
+      if (sortBy === "votes" || sortBy === "comment_count") {
+        return order === "ascending" ? a[sortBy] - b[sortBy] : b[sortBy] - a[sortBy];
+      } else if (sortBy === "created_at") {
+        return order === "ascending"
+          ? new Date(a[sortBy]) - new Date(b[sortBy])
+          : new Date(b[sortBy]) - new Date(a[sortBy]);
+      }
+      return 0;
+    });
+  }, [articles, sortBy, order]);
+
   if (loading) return <p>Loading...</p>;
+
+  function changeSortBy(event) {
+    setSortBy(event.target.value);
+  }
+
+  function changeOrder(event) {
+    setOrder(event.target.value);
+  }
 
   return (
     <div>
       <ArticleNavBar />
       {{
-          cooking: <p>👩🏻‍🍳</p>,
-          coding: <p>💻</p>,
-          football: <p>⚽️</p>,
-          undefined: <></>,
-        }[topic]}
+        cooking: <p>👩🏻‍🍳</p>,
+        coding: <p>💻</p>,
+        football: <p>⚽️</p>,
+        undefined: <></>,
+      }[topic]}
       <nav>
-        <select name="sort-by" id="sort-by">
-        <option value="Date">Date</option>
-        <option value="Comments">Comments</option>
-        <option value="Votes">Votes</option>
+        <select name="sort-by" id="sort-by" onChange={changeSortBy}>
+          <option value="created_at">Date</option>
+          <option value="comment_count">Comments</option>
+          <option value="votes">Votes</option>
         </select>
-        <select name="order-by" id="order-by">
+        <select name="order-by" id="order-by" onChange={changeOrder}>
           <option value="ascending">ᐃ</option>
           <option value="descending">ᐁ</option>
         </select>
       </nav>
-      {articles.map((article) => {
-        return <ArticleCard article={article} />;
-      })}
+      {sortedArticles.map((article) => (
+        <ArticleCard key={article.article_id} article={article} />
+      ))}
     </div>
   );
 }
