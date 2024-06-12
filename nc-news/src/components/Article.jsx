@@ -4,10 +4,12 @@ import { useParams } from "react-router";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 import Votes from "./Votes";
+import Error from "./Error";
 
 function Article() {
   const [loading, setLoading] = useState(true);
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
+  const [error, setError] = useState(null);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -18,9 +20,14 @@ function Article() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        setLoading(false);
+        setError(error.message);
       });
-  }, []);
+  }, [article_id]);
+
+  if (error) {
+    return <Error message={error} />;
+  }
 
   if (loading) return <p>Loading...</p>;
 
@@ -33,13 +40,13 @@ function Article() {
         <p className="view-article-topic">{article.topic}</p>
         <p className="view-article-author">{article.author}</p>
         <p className="view-article-time">{timeStamp}</p>
-       <Votes className="view-article-top"articleVotes={article.votes} article_id={article.article_id}/>
+       <Votes className="view-article-top" articleVotes={article.votes} article_id={article.article_id}/>
       </section>
 
       <img
         className="view-article-image"
         src={article.article_img_url}
-        alt=""
+        alt={article.title}
       />
 
       <section className="view-article-bottom">
