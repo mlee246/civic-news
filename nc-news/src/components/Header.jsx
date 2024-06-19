@@ -1,17 +1,20 @@
-import {Link} from 'react-router-dom'
+import logo from "../../assets/logo.png"
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
-function Header(){
+
+function Header() {
     return (
         <div className='header'>
 
-        <h1 className="header-title">NC News</h1>
+            <img src={logo} alt="" className='header-logo' />
 
-        <nav className="header-nav-bar">
-            <Link to="/" className="header-nav-link">Home</Link>
-            <Link to="/" className="header-nav-link">Create</Link>
-            <Link to="/articles" className="header-nav-link">Articles</Link>
-        </nav>
-        
+            <DropdownButton id="dropdown-basic-button" title="Select a topic">
+                <Dropdown.Item href="/articles">All News</Dropdown.Item>
+                <Dropdown.Item href="/articles/coding">Coding</Dropdown.Item>
+                <Dropdown.Item href="/articles/football">Football</Dropdown.Item>
+                <Dropdown.Item href="/articles/cooking">Cooking</Dropdown.Item>
+            </DropdownButton>
         </div>
     )
 }

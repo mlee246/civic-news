@@ -1,9 +1,9 @@
+import Articles from '../components/Articles'
+
 function Homepage(){
     return (
         <div>
-
-        <h1 className="">Homepage</h1>
-        
+        <Articles/>
         </div>
     )
 }

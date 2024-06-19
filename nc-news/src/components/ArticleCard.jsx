@@ -24,7 +24,7 @@ function ArticleCard({ article }) {
       />
 
       <section className="article-card-bottom">
-        <p className="article-card-topic">{article.topic}</p>
+        <p className="article-card-topic">/ {article.topic}</p>
         <p className="article-card-time">{timeStamp}</p>
         <p className="article-card-comments">
           {article.comment_count} comments

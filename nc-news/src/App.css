@@ -3,39 +3,62 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: rgb(225, 198, 225);
+  background-color: whitesmoke;
+  font-size: 0.9rem;
 }
 
 .header {
-  background-color: rgb(92, 147, 207);
-}
-
-.header-title{
-  display:flex;
-  justify-content: center;  
-}
-
-.header-nav-bar {
-  background-color: rgb(50, 130, 236);
   display: flex;
-  justify-content:space-evenly;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
 }
 
-.header-nav-link {
+.header-logo {
+  height: 100px;
+
+}
+
+#dropdown-basic-button {
   color: white;
+  background-color: #2B2D42;
 }
 
-.article-nav-bar{
-  margin-top: 0.5rem;
-  background-color: rgb(92, 147, 207);
+.topic-bar {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #2B2D42;
+  color: white;
   display: flex;
-  justify-content:space-evenly;
+  gap: 10px;
+  
 }
+
+.topic-bar.coding {
+  background-image: url('../assets/coding-header.png');
+}
+
+.topic-bar.cooking {
+  background-image: url('../assets/cooking-header.png');
+}
+
+.topic-bar.football {
+  background-image: url('../assets/football-header.png');
+}
+
+.topic-bar.coding,
+.topic-bar.cooking,
+.topic-bar.football {
+  background-size: cover;
+  background-position: center;
+}
+
 .article-card {
   background-color: rgba(255, 255, 255, 0.319);
-  color: rgb(92, 147, 207);
-  padding: 0.5rem;
-  margin: 0.5rem;
+  color: #2B2D42;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .article-card-top {
@@ -53,20 +76,30 @@
 }
 
 .article-card-vote {
-display: flex;
-justify-content: flex-end;
-margin-left: auto; 
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .article-card-vote-button {
-height: 2%;
-width: 2%;
-background-color: transparent;
-color: rgb(92, 147, 207) ;
+  height: 2%;
+  width: 2%;
+  background-color: transparent;
+  color:white;
+}
+
+.article-votes {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  background-color: #2B2D42;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
 }
 
 .article-card-image {
-max-width: 100%;
+  max-width: 100%;
 }
 
 .article-card-bottom {
@@ -82,14 +115,29 @@ max-width: 100%;
   padding-right: 0.5rem;
 }
 
+#topic-bar{
+  background-color: #8D99AE;
+  border-radius: 0.35rem;
+}
+
+#sort-by{
+  border-radius: 0.35rem;
+}
+
+#order-by{
+  border-radius: 0.35rem;
+}
+
 .view-article-button {
   height: 2%;
   display: flex;
-justify-content: flex-end;
-margin-left: auto; 
-  background-color: rgb(50, 130, 236);
+  justify-content: flex-end;
+  margin-left: auto;
+  background-color: #8D99AE;
   color: white;
+  padding: 0.2rem;
 }
+
 
 .view-article {
   background-color: rgba(255, 255, 255, 0.319);
@@ -114,19 +162,19 @@ margin-left: auto;
 }
 
 .view-article-vote {
-display: flex;
-justify-content: flex-end;
-margin-left: auto; 
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .view-article-vote-button {
-height: 2%;
-width: 2%;
-background-color: transparent;
-color: #213547;
+  height: 2%;
+  width: 2%;
+  background-color: transparent;
+  color: white;
 }
 
-.view-article-image{
+.view-article-image {
   width: 100%;
 }
 
@@ -147,11 +195,11 @@ color: #213547;
 }
 
 .view-article-body {
-text-align: left;
-margin: 0.5rem;
+  text-align: left;
+  margin: 0.5rem;
 }
 
-.comment-card{
+.comment-card {
   background-color: rgba(255, 255, 255, 0.493);
   margin: 0.5rem;
   border-radius: 0.25rem;
@@ -159,9 +207,9 @@ margin: 0.5rem;
   text-align: left;
 }
 
-.comment-details{
+.comment-details {
   display: flex;
-  color: rgb(92, 147, 207) ;
+  color: rgb(92, 147, 207);
 }
 
 .comment-author {
@@ -169,31 +217,20 @@ margin: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.comment-vote{
+.comment-vote {
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
- ;
+  ;
 }
 
 .comment-vote-button {
   height: 2%;
-width: 2%;
-background-color: transparent;
-color: rgb(92, 147, 207) ;
+  width: 2%;
+  background-color: transparent;
+  color: rgb(92, 147, 207);
 }
 
-.article-votes {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  background-color: rgb(92, 147, 207);
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  color: #213547;
-}
-
-
-.vote-button-error{
+.vote-button-error {
   color: white;
 }

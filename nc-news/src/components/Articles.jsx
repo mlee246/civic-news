@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
-import ArticleNavBar from "./ArticleNavBar";
 import Error from "./Error";
 
 function Articles({ topic }) {
@@ -58,26 +57,23 @@ function Articles({ topic }) {
     return <Error message={error} />;
   }
 
+  const topicBarClass = topic ? `topic-bar ${topic}` : 'topic-bar';
+
   return (
     <div>
-      <ArticleNavBar />
-      {{
-        cooking: <p>👩🏻‍🍳</p>,
-        coding: <p>💻</p>,
-        football: <p>⚽️</p>,
-        undefined: <></>,
-      }[topic]}
-      <nav>
-        <select name="sort-by" id="sort-by" onChange={changeSortBy}>
+
+      <div className={topicBarClass}>
+        <label htmlFor="sort-by" id="sort-by-label">Sort by:</label>
+        <select name="sort-by" id="sort-by" onChange={changeSortBy}> 
           <option value="created_at">Date</option>
           <option value="comment_count">Comments</option>
           <option value="votes">Votes</option>
         </select>
         <select name="order-by" id="order-by" onChange={changeOrder}>
-          <option value="ascending">ᐃ</option>
-          <option value="descending">ᐁ</option>
+          <option value="ascending">ascending</option>
+          <option value="descending">descending</option>
         </select>
-      </nav>
+      </div>
       {sortedArticles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
       ))}
