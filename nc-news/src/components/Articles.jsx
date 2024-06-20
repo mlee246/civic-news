@@ -62,7 +62,7 @@ function Articles({ topic }) {
   return (
     <div>
 
-      <div className={topicBarClass}>
+      <div id="topic-bar" className={topicBarClass}>
         <label htmlFor="sort-by" id="sort-by-label">Sort by:</label>
         <select name="sort-by" id="sort-by" onChange={changeSortBy}> 
           <option value="created_at">Date</option>

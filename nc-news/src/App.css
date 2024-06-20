@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -8,16 +14,20 @@
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   background-color: white;
+  z-index: 1000; 
 }
 
 .header-logo {
   height: 100px;
-
 }
 
 #dropdown-basic-button {
@@ -27,12 +37,16 @@
 
 .topic-bar {
   padding: 10px;
-  margin-bottom: 20px;
+  margin-top: 120px; 
   background-color: #2B2D42;
   color: white;
   display: flex;
   gap: 10px;
-  
+  background-size: cover;
+  background-position: center;
+  position: sticky;
+  top: 60px; 
+  z-index: 999;
 }
 
 .topic-bar.coding {
@@ -47,11 +61,13 @@
   background-image: url('../assets/football-header.png');
 }
 
-.topic-bar.coding,
-.topic-bar.cooking,
-.topic-bar.football {
-  background-size: cover;
-  background-position: center;
+.topic-bar label, .topic-bar select {
+  margin: 0 10px;
+  padding: 5px;
+}
+
+#sort-by, #order-by {
+  border-radius: 0.35rem;
 }
 
 .article-card {
