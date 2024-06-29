@@ -24,12 +24,16 @@
 
 .header-logo {
   height: 90px;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
 }
 
-#dropdown-basic-button {
+#dropdown-basic-button, #sort-by-dropdown, #order-by-dropdown  {
   color: white;
   background-color: #2B2D42;
+  border-color: purple;
 }
+
 
 .topic-bar {
   padding: 0.5rem;
@@ -45,25 +49,9 @@
   top: 100px; 
 }
 
-.topic-bar.coding {
-  background-image: url('../assets/coding-header.png');
-}
-
-.topic-bar.cooking {
-  background-image: url('../assets/cooking-header.png');
-}
-
-.topic-bar.football {
-  background-image: url('../assets/football-header.png');
-}
-
 .topic-bar label, .topic-bar select {
   margin: 0 10px;
   padding: 5px;
-}
-
-#sort-by, #order-by {
-  border-radius: 0.35rem;
 }
 
 .article-card {
@@ -123,14 +111,6 @@
   padding-right: 0.5rem;
 }
 
-#sort-by{
-  border-radius: 0.35rem;
-}
-
-#order-by{
-  border-radius: 0.35rem;
-}
-
 .view-article-button {
   height: 2%;
   display: flex;
@@ -140,7 +120,6 @@
   color: white;
   padding: 0.2rem;
 }
-
 
 .view-article {
   background-color: rgba(255, 255, 255, 0.319);
@@ -183,7 +162,6 @@
 
 .view-article-bottom {
   display: flex;
-
 }
 
 .view-article-topic {
