@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import Error from "./Error";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Articles({ topic }) {
   const [loading, setLoading] = useState(true);
@@ -12,11 +14,11 @@ function Articles({ topic }) {
 
   useEffect(() => {
     setLoading(true);
-    setError(null); 
+    setError(null);
 
     const request = topic
-    ? `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`
-    : `https://be-nc-news-zmuo.onrender.com/api/articles`;
+      ? `https://be-nc-news-zmuo.onrender.com/api/articles?topic=${topic}`
+      : `https://be-nc-news-zmuo.onrender.com/api/articles`;
 
     axios
       .get(request)
@@ -46,11 +48,11 @@ function Articles({ topic }) {
   if (loading) return <p>Loading...</p>;
 
   function changeSortBy(event) {
-    setSortBy(event.target.value);
+    setSortBy(event);
   }
 
   function changeOrder(event) {
-    setOrder(event.target.value);
+    setOrder(event);
   }
 
   if (error) {
@@ -61,18 +63,26 @@ function Articles({ topic }) {
 
   return (
     <div>
-
       <div id="topic-bar" className={topicBarClass}>
-        <label htmlFor="sort-by" id="sort-by-label">Sort by:</label>
-        <select name="sort-by" id="sort-by" onChange={changeSortBy}> 
-          <option value="created_at">Date</option>
-          <option value="comment_count">Comments</option>
-          <option value="votes">Votes</option>
-        </select>
-        <select name="order-by" id="order-by" onChange={changeOrder}>
-          <option value="ascending">ascending</option>
-          <option value="descending">descending</option>
-        </select>
+      <DropdownButton id="dropdown-basic-button" title="Select a topic">
+                <Dropdown.Item href="/articles">All News</Dropdown.Item>
+                <Dropdown.Item href="/articles/coding">Coding</Dropdown.Item>
+                <Dropdown.Item href="/articles/football">Football</Dropdown.Item>
+                <Dropdown.Item href="/articles/cooking">Cooking</Dropdown.Item>
+            </DropdownButton>
+            
+          <DropdownButton id="sort-by-dropdown" title="Sort-by" onSelect={changeSortBy}>
+            <Dropdown.Item eventKey="created_at" >Date</Dropdown.Item>
+            <Dropdown.Item eventKey="votes" >Votes</Dropdown.Item>
+            <Dropdown.Item eventKey="comment_count" >Comments</Dropdown.Item>
+          </DropdownButton>
+
+          <DropdownButton id="order-by-dropdown" title="Order" onSelect={changeOrder}>
+            <Dropdown.Item eventKey="descending">Descending</Dropdown.Item>
+            <Dropdown.Item eventKey="ascending">Ascending</Dropdown.Item>
+          </DropdownButton>
+       
+       
       </div>
       {sortedArticles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
