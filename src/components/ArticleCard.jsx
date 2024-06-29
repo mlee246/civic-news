@@ -9,7 +9,6 @@ function ArticleCard({ article }) {
     <div className="article-card">
       <section className="article-card-top">
         <p className="article-card-title">{article.title}</p>
-        <p className="article-card-author">{article.author}</p>
         <Votes
           className="view-article-top"
           articleVotes={article.votes}

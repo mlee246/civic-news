@@ -7,27 +7,23 @@
 #root {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   background-color: whitesmoke;
-  font-size: 0.9rem;
+  font-size: 0.8em;
 }
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+  padding: 0.5rem;
   background-color: white;
   z-index: 1000; 
 }
 
 .header-logo {
-  height: 100px;
+  height: 90px;
 }
 
 #dropdown-basic-button {
@@ -36,8 +32,9 @@
 }
 
 .topic-bar {
-  padding: 10px;
-  margin-top: 120px; 
+  padding: 0.5rem;
+  padding-top: 0.95rem;
+  margin-top: 100px; 
   background-color: #2B2D42;
   color: white;
   display: flex;
@@ -45,8 +42,7 @@
   background-size: cover;
   background-position: center;
   position: sticky;
-  top: 60px; 
-  z-index: 999;
+  top: 100px; 
 }
 
 .topic-bar.coding {
@@ -73,8 +69,8 @@
 .article-card {
   background-color: rgba(255, 255, 255, 0.319);
   color: #2B2D42;
-  padding: 0.25rem;
   margin-bottom: 0.5rem;
+  padding: 1rem;
 }
 
 .article-card-top {
@@ -125,15 +121,6 @@
 .article-card-topic {
   font-weight: bold;
   padding-right: 0.5rem;
-}
-
-.article-card-author {
-  padding-right: 0.5rem;
-}
-
-#topic-bar{
-  background-color: #8D99AE;
-  border-radius: 0.35rem;
 }
 
 #sort-by{
