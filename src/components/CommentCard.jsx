@@ -6,6 +6,7 @@ function CommentCard({ article_id }) {
   const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState([]);
   const [deleteLoading, setDeleteLoading] = useState(false);
+  const [votedComments, setVotedComments] = useState({});
 
   useEffect(() => {
     axios
@@ -17,14 +18,15 @@ function CommentCard({ article_id }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [article_id]);
 
   if (loading) return <p>Loading...</p>;
 
   function timeStamp(comment) {
     return (
       comment.created_at.slice(0, 10) + " " + comment.created_at.slice(11, 16)
-    )}
+    );
+  }
 
   function handleCommentDelete(comment_id) {
     setDeleteLoading(true);
@@ -34,29 +36,59 @@ function CommentCard({ article_id }) {
       .catch((error) => console.log(error));
   }
 
+  function handleVote(comment_id, vote) {
+    setComments((prevComments) =>
+      prevComments.map((comment) =>
+        comment.comment_id === comment_id
+          ? { ...comment, votes: comment.votes + vote }
+          : comment
+      )
+    );
+
+    setVotedComments((prevVotedComments) => ({
+      ...prevVotedComments,
+      [comment_id]: true,
+    }));
+
+  }
+
   return (
     <div className="comment-section">
       {comments.map((comment) => {
+        const hasVoted = votedComments[comment.comment_id] || false;
+
         return (
-          <div className="comment-card">
+          <div key={comment.comment_id} className="comment-card">
             {comment.body}
             <section className="comment-details">
               <p className="comment-author">{comment.author}</p>
               <p>{timeStamp(comment)}</p>
-
               <p className="comment-vote">{comment.votes} Votes</p>
               <div className="vote-or-delete">
                 {comment.author === username ? (
                   <button
                     className="comment-delete-button"
                     disabled={deleteLoading}
-                    onClick={() => handleCommentDelete(comment.comment_id)}>
+                    onClick={() => handleCommentDelete(comment.comment_id)}
+                  >
                     {deleteLoading ? "Loading..." : "Delete Comment"}
                   </button>
                 ) : (
                   <>
-                    <button className="comment-vote-button">ᐁ</button>
-                    <button className="comment-vote-button">ᐃ</button>
+                    <button
+                      className="comment-vote-button"
+                      onClick={() => handleVote(comment.comment_id, -1)}
+                      disabled={hasVoted}
+                    >
+                      ᐁ
+                    </button>
+                    <button
+                      className="comment-vote-button"
+                      onClick={() => handleVote(comment.comment_id, 1)}
+                      disabled={hasVoted}
+                    >
+                      ᐃ
+                    </button>
                   </>
                 )}
               </div>
