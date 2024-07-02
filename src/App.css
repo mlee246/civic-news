@@ -7,8 +7,7 @@
 #root {
   width: 100%;
   margin: 0 auto;
-  text-align: center;
-  background-color: whitesmoke;
+  background-color: white;;
   font-size: 0.8em;
 }
 
@@ -19,7 +18,7 @@
   align-items: center;
   padding: 0.5rem;
   background-color: white;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .header-logo {
@@ -32,7 +31,9 @@
   height: 3rem
 }
 
-#dropdown-basic-button, #sort-by-dropdown, #order-by-dropdown  {
+#dropdown-basic-button,
+#sort-by-dropdown,
+#order-by-dropdown {
   color: white;
   background-color: #2B2D42;
   border-color: purple;
@@ -42,7 +43,7 @@
 .topic-bar {
   padding: 0.5rem;
   padding-top: 0.95rem;
-  margin-top: 100px; 
+  margin-top: 100px;
   background-color: #2B2D42;
   color: white;
   display: flex;
@@ -50,29 +51,40 @@
   background-size: cover;
   background-position: center;
   position: sticky;
-  top: 100px; 
+  top: 100px;
 }
 
-.topic-bar label, .topic-bar select {
+.topic-bar label,
+.topic-bar select {
   margin: 0 10px;
   padding: 5px;
 }
 
 .article-card {
-  background-color: rgba(255, 255, 255, 0.319);
+  background-color: rgba(0, 0, 0, 0.042);
   color: #2B2D42;
   margin-bottom: 0.5rem;
-  padding: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.55rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: left;
 }
 
 .article-card-top {
   display: flex;
+  justify-content: flex-end;
+  text-align: left;
+  background-color: white;
 }
 
-.article-card-title {
-  font-weight: bold;
-  justify-content: left;
+#article-card-title {
+  text-align: left;
   padding-right: 0.5rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  flex-grow: 1;
+  padding: 0.4rem;
 }
 
 .article-card-time {
@@ -88,8 +100,18 @@
 .article-votes {
   display: flex;
   justify-content: flex-end;
-  background-color: grey;
-  color: navy;
+  align-items: center;
+  background-color: #2B2D42;
+  color: white;
+  padding: 5px;
+}
+
+.article-votes:hover {
+  border-color: transparent;
+}
+
+.vote-button-img {
+  width: 2rem;
 }
 
 .article-card-image {
@@ -98,11 +120,13 @@
 
 .article-card-bottom {
   display: flex;
+  background-color: white;
 }
 
 .article-card-topic {
   font-weight: bold;
-  padding-right: 0.5rem;
+  padding-right: 0.4rem;
+  padding-left: 0.25rem
 }
 
 .view-article-button {
@@ -112,7 +136,7 @@
   margin-left: auto;
   background-color: #8D99AE;
   color: white;
-  padding: 0.2rem;
+  padding: 0.65rem;
 }
 
 .view-article {
@@ -142,7 +166,7 @@
   justify-content: flex-end;
   margin-left: auto;
   background-color: aliceblue;
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+}
 
 .view-article-vote-button {
   height: 2%;

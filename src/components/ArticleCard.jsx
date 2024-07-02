@@ -8,7 +8,7 @@ function ArticleCard({ article }) {
   return (
     <div className="article-card">
       <section className="article-card-top">
-        <p className="article-card-title">{article.title}</p>
+        <p id="article-card-title">{article.title}</p>
         <Votes
           className="view-article-top"
           articleVotes={article.votes}
