@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import logo from "../../assets/logo-trial-4.png"
+import logo from "../../assets/logo.png"
 import favicon from "../../assets/favicon.png"
 import home from "../../assets/home.png"
 
