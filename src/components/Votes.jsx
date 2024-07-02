@@ -32,21 +32,21 @@ function Votes({ articleVotes, article_id }) {
   return (
     <section className="article-votes">
       {err && <p className="vote-button-error">{err}</p>}
-      <p className="article-vote">Vote</p>
+
       <button
         className="view-article-vote-button"
         onClick={() => handleVote(-1)}
         disabled={disabled || hasVoted}
-      >
-        ᐁ
+        >
+        ⬇️
       </button>
-      <p>{votes}</p>
+        <p>{votes}</p>
       <button
         className="view-article-vote-button"
         onClick={() => handleVote(1)}
         disabled={disabled || hasVoted}
       >
-        ᐃ
+        ⬆
       </button>
     </section>
   );
