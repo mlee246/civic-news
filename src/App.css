@@ -28,6 +28,10 @@
   padding-bottom: 0.65rem;
 }
 
+.icon-images {
+  height: 3rem
+}
+
 #dropdown-basic-button, #sort-by-dropdown, #order-by-dropdown  {
   color: white;
   background-color: #2B2D42;
@@ -81,21 +85,11 @@
   margin-left: auto;
 }
 
-.article-card-vote-button {
-  height: 2%;
-  width: 2%;
-  background-color: transparent;
-  color:white;
-}
-
 .article-votes {
   display: flex;
   justify-content: flex-end;
-  margin-left: auto;
-  background-color: #2B2D42;
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  color: white;
+  background-color: grey;
+  color: navy;
 }
 
 .article-card-image {
@@ -127,10 +121,10 @@
 
 .view-article-top {
   display: flex;
-  background-color: rgb(92, 147, 207);
-  margin-top: 0.5rem;
+  background-color: #2B2D42;
+  margin-top: 6.5rem;
   padding-left: 0.5rem;
-  color: #213547
+  color: white
 }
 
 .view-article-title {
@@ -147,7 +141,8 @@
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
-}
+  background-color: aliceblue;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 .view-article-vote-button {
   height: 2%;
