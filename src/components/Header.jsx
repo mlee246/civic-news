@@ -10,8 +10,6 @@ function Header() {
             
                 <img src={home} alt="" className="icon-images"/>
             </Link>
-            <button>
-            </button>
             <img src={logo} alt="" className='header-logo' />
             <img src={favicon} alt="" className="icon-images"/>
       
