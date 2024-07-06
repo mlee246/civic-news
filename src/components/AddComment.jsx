@@ -41,10 +41,10 @@ function AddComment({ article_id }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="comment-form">
       <input
-        placeholder="Leave your comment here..."
-        {...register("comment", { required: "This field is required" })}
+        placeholder=" Leave your comment here ..."
+        {...register("comment", { required: "This field is required" })} className="comment-form-input"
       />
       {errors.comment && <span>{errors.comment.message}</span>}
       <input type="submit" />

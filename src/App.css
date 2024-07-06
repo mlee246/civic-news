@@ -7,7 +7,7 @@
 #root {
   width: 100%;
   margin: 0 auto;
-  background-color: white;;
+  background-color: white;
   font-size: 0.8em;
 }
 
@@ -16,10 +16,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background-color: white;
   z-index: 1000;
- margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 
 .header-logo {
@@ -28,8 +28,7 @@
 }
 
 .icon-images {
-  height: 60px;  
- 
+  height: 60px;
 }
 
 #dropdown-basic-button,
@@ -40,7 +39,6 @@
   border-color: purple;
 }
 
-
 .topic-bar {
   padding: 0.5rem;
   padding-top: 0.95rem;
@@ -49,8 +47,6 @@
   color: white;
   display: flex;
   gap: 10px;
-  background-size: cover;
-  background-position: center;
   position: sticky;
   top: 100px;
 }
@@ -89,6 +85,7 @@
 }
 
 .article-card-time {
+  text-align: left;
   padding-right: 0.5rem;
 }
 
@@ -112,7 +109,7 @@
 }
 
 .vote-button-img {
-  width: 2rem;
+  width: 35px;
 }
 
 .article-card-image {
@@ -127,7 +124,7 @@
 .article-card-topic {
   font-weight: bold;
   padding-right: 0.4rem;
-  padding-left: 0.25rem
+  padding-left: 0.25rem;
 }
 
 .view-article-button {
@@ -146,10 +143,14 @@
 
 .view-article-top {
   display: flex;
+  justify-content: space-around;
+  text-align: left;
   background-color: #2B2D42;
-  margin-top: 6.5rem;
-  padding-left: 0.5rem;
-  color: white
+  padding-left: .5rem;
+  color: white;
+  margin-top: 100px;
+  position: sticky;
+  top: 100px;
 }
 
 .view-article-title {
@@ -158,22 +159,20 @@
   margin: 0.5rem;
 }
 
-.view-article-time {
-  padding-right: 0.5rem;
+.view-article-topic {
+  font-weight: bold;
+  text-align: left;
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
+  padding-right: 1rem;
 }
 
-.view-article-vote {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  background-color: aliceblue;
-}
-
-.view-article-vote-button {
-  height: 2%;
-  width: 2%;
-  background-color: transparent;
-  color: white;
+.view-article-time,
+.view-article-author {
+  text-align: left;
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
+  padding-right: 1rem;
 }
 
 .view-article-image {
@@ -184,33 +183,39 @@
   display: flex;
 }
 
-.view-article-topic {
-  font-weight: bold;
-  padding-right: 0.5rem;
-  display: flex;
-}
-
-.view-article-author {
-  padding-right: 0.5rem;
-  display: flex;
-}
-
 .view-article-body {
   text-align: left;
   margin: 0.5rem;
 }
 
+.view-article-comment-count {
+  margin-left: 0.5rem;
+  color: #8D99AE;
+}
+
+.comment-form {
+  display: flex;
+  justify-content: center
+}
+
+.comment-form-input {
+  height: 60px;
+  width: 320px;
+  margin-right: 1rem;
+}
+
 .comment-card {
-  background-color: rgba(255, 255, 255, 0.493);
+  background-color:  rgba(0, 0, 0, 0.042);
   margin: 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
   padding: 0.5rem;
   text-align: left;
 }
 
 .comment-details {
   display: flex;
-  color: rgb(92, 147, 207);
+  align-items: center;
+  color: #8D99AE;
 }
 
 .comment-author {
@@ -222,14 +227,22 @@
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
-  ;
+  align-items: center;
+}
+
+.vote-or-delete{
+  display: flex;
+  align-items: center;
 }
 
 .comment-vote-button {
-  height: 2%;
-  width: 2%;
+  display: flex;
+  padding: 0.25rem;
   background-color: transparent;
-  color: rgb(92, 147, 207);
+}
+
+#vote-button-img{
+  width: 35px;
 }
 
 .vote-button-error {
