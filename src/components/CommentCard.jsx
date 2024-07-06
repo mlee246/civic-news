@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import upvote from "../../assets/upvote.png"
+import downvote from "../../assets/downvote.png"
 
 function CommentCard({ article_id }) {
   const username = "tickle122";
@@ -60,10 +62,12 @@ function CommentCard({ article_id }) {
         return (
           <div key={comment.comment_id} className="comment-card">
             {comment.body}
+
             <section className="comment-details">
               <p className="comment-author">{comment.author}</p>
               <p>{timeStamp(comment)}</p>
               <p className="comment-vote">{comment.votes} Votes</p>
+
               <div className="vote-or-delete">
                 {comment.author === username ? (
                   <button
@@ -80,14 +84,14 @@ function CommentCard({ article_id }) {
                       onClick={() => handleVote(comment.comment_id, -1)}
                       disabled={hasVoted}
                     >
-                      ᐁ
+                      <img src={downvote} alt="" id="vote-button-img" />
                     </button>
                     <button
                       className="comment-vote-button"
                       onClick={() => handleVote(comment.comment_id, 1)}
                       disabled={hasVoted}
                     >
-                      ᐃ
+                      <img src={upvote} alt="" id="vote-button-img" />
                     </button>
                   </>
                 )}

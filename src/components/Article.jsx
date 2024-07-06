@@ -36,11 +36,15 @@ function Article() {
 
   return (
     <div className="view-article">
+      
       <section className="view-article-top">
         <p className="view-article-topic">/ {article.topic}</p>
         <p className="view-article-author">{article.author}</p>
         <p className="view-article-time">{timeStamp}</p>
-       <Votes className="view-article-vote" articleVotes={article.votes} article_id={article.article_id}/>
+        <div id="view-article-votes">
+
+          <Votes id="view-article-votes" articleVotes={article.votes} article_id={article.article_id} />
+        </div>
       </section>
 
       <img
