@@ -20,6 +20,7 @@
   background-color: white;
   z-index: 1000;
   padding: 0.5rem;
+  top: 0;
 }
 
 .header-logo {
@@ -247,4 +248,10 @@
 
 .vote-button-error {
   color: white;
+}
+
+.loading-animation{
+  position: relative;
+  min-height: 100vh;
+  margin-top: 100px;
 }

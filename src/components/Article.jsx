@@ -5,6 +5,7 @@ import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 import Votes from "./Votes";
 import Error from "./Error";
+import Loading from "./Loading";
 
 function Article() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ function Article() {
     return <Error message={error} />;
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>;
 
   const timeStamp =
     article.created_at.slice(0, 10) + " " + article.created_at.slice(11, 16);
