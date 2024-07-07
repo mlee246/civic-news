@@ -4,6 +4,7 @@ import ArticleCard from "./ArticleCard";
 import Error from "./Error";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Loading from './Loading';
 
 function Articles({ topic }) {
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ function Articles({ topic }) {
     });
   }, [articles, sortBy, order]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>
 
   function changeSortBy(event) {
     setSortBy(event);
