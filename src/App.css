@@ -11,6 +11,20 @@
   font-size: 0.8em;
 }
 
+@media only screen and (min-width: 768px) {
+  #root { 
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    font-size: 0.8em;
+  }
+  .header {
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .header {
   position: fixed;
   width: 100%;
